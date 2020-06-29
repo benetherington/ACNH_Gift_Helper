@@ -1,0 +1,27 @@
+container:
+  type: ColumnPanel
+  properties: {col_widths: '{}'}
+  event_bindings: {refreshing_data_bindings: form_refreshing_data_bindings}
+components:
+- type: form:HorizontalRule
+  properties: {}
+  name: horizontal_rule_1
+  layout_properties: {grid_position: 'NCUJNP,UGTRDR'}
+- type: Label
+  properties: {role: subheading, align: center, tooltip: '', border: '', foreground: '',
+    visible: true, text: No villagers love this item's style and color., font_size: null,
+    font: '', spacing_above: small, icon_align: left, spacing_below: small, italic: false,
+    background: '', bold: true, underline: false, icon: ''}
+  name: warning_label
+  layout_properties: {grid_position: 'LYHHGX,NWOEKT'}
+  data_bindings:
+  - {property: text, code: self.warning_text()}
+- type: FlowPanel
+  properties: {role: null, spacing: medium, align: center, tooltip: '', border: '',
+    foreground: '', visible: true, spacing_above: small, spacing_below: small, background: ''}
+  name: flow_panel
+  layout_properties: {grid_position: 'OMMSPY,TRAGPQ'}
+is_package: true
+custom_component: true
+properties:
+- {name: colors, type: object, default_value: null, default_binding_prop: true}

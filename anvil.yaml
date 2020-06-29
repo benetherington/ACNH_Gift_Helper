@@ -1,0 +1,220 @@
+services:
+- source: /runtime/services/tables.yml
+  client_config: {}
+  server_config: {auto_create_missing_columns: true}
+- source: /runtime/services/anvil/users.yml
+  client_config: {allow_signup: true, enable_automatically: true, use_email: true,
+    confirm_email: false, use_facebook: false, use_google: false, allow_remember_me: true,
+    remember_me_days: 365}
+  server_config: {user_table: users}
+- source: /runtime/services/google.yml
+  client_config:
+    app_files:
+    - capabilities: {canCopy: true, canEdit: true}
+      editable: true
+      copyable: true
+      embedLink: https://docs.google.com/spreadsheets/d/1rbQ0ktZ7FJmhuLyUaiiLCG7K4M4HZmiaW_353zPVxiQ/htmlembed?ouid=114219664951819483618
+      copyRequiresWriterPermission: false
+      python_name: acnh_spreadsheet
+      explicitlyTrashed: false
+      lastModifyingUser:
+        kind: drive#user
+        displayName: Ben Etherington
+        picture: {url: 'https://lh3.googleusercontent.com/a-/AOh14Gh6aGLMT9oJmpD4m6NG1D53cjZ73xRgfXTVbVxlHw=s64'}
+        isAuthenticatedUser: true
+        permissionId: '17681203194511289201'
+        emailAddress: zoundspadang@gmail.com
+      shared: false
+      createdDate: '2020-06-05T00:19:01.099Z'
+      id: 1rbQ0ktZ7FJmhuLyUaiiLCG7K4M4HZmiaW_353zPVxiQ
+      owners:
+      - kind: drive#user
+        displayName: Ben Etherington
+        picture: {url: 'https://lh3.googleusercontent.com/a-/AOh14Gh6aGLMT9oJmpD4m6NG1D53cjZ73xRgfXTVbVxlHw=s64'}
+        isAuthenticatedUser: true
+        permissionId: '17681203194511289201'
+        emailAddress: zoundspadang@gmail.com
+      markedViewedByMeDate: '1970-01-01T00:00:00.000Z'
+      spaces: [drive]
+      parents:
+      - {kind: drive#parentReference, id: 0AMpPBX3lSynDUk9PVA, selfLink: 'https://www.googleapis.com/drive/v2/files/1rbQ0ktZ7FJmhuLyUaiiLCG7K4M4HZmiaW_353zPVxiQ/parents/0AMpPBX3lSynDUk9PVA',
+        parentLink: 'https://www.googleapis.com/drive/v2/files/0AMpPBX3lSynDUk9PVA',
+        isRoot: true}
+      labels: {starred: false, hidden: false, trashed: false, restricted: false, viewed: true}
+      iconLink: https://drive-thirdparty.googleusercontent.com/16/type/application/vnd.google-apps.spreadsheet
+      permission: noclient
+      selfLink: https://www.googleapis.com/drive/v2/files/1rbQ0ktZ7FJmhuLyUaiiLCG7K4M4HZmiaW_353zPVxiQ
+      lastViewedByMeDate: '2020-06-24T04:02:40.360Z'
+      userPermission: {kind: drive#permission, etag: '"63UhNbnSrb6TevTzQvuT3D6vUWQ"',
+        id: me, selfLink: 'https://www.googleapis.com/drive/v2/files/1rbQ0ktZ7FJmhuLyUaiiLCG7K4M4HZmiaW_353zPVxiQ/permissions/me',
+        role: owner, type: user}
+      lastModifyingUserName: Ben Etherington
+      etag: '"MTU5Mjk3MTM2MDM2MA"'
+      kind: drive#file
+      modifiedByMeDate: '2020-06-24T04:02:40.360Z'
+      title: Copy of Data Spreadsheet for Animal Crossing New Horizons
+      version: '10'
+      appDataContents: false
+      writersCanShare: true
+      alternateLink: https://docs.google.com/spreadsheets/d/1rbQ0ktZ7FJmhuLyUaiiLCG7K4M4HZmiaW_353zPVxiQ/edit?usp=drivesdk
+      mimeType: application/vnd.google-apps.spreadsheet
+      modifiedDate: '2020-06-24T04:02:40.360Z'
+      quotaBytesUsed: '0'
+      exportLinks: {x-vnd.oasis.opendocument.spreadsheet: 'https://docs.google.com/spreadsheets/export?id=1rbQ0ktZ7FJmhuLyUaiiLCG7K4M4HZmiaW_353zPVxiQ&exportFormat=ods',
+        tab-separated-values: 'https://docs.google.com/spreadsheets/export?id=1rbQ0ktZ7FJmhuLyUaiiLCG7K4M4HZmiaW_353zPVxiQ&exportFormat=tsv',
+        pdf: 'https://docs.google.com/spreadsheets/export?id=1rbQ0ktZ7FJmhuLyUaiiLCG7K4M4HZmiaW_353zPVxiQ&exportFormat=pdf',
+        vnd.openxmlformats-officedocument.spreadsheetml.sheet: 'https://docs.google.com/spreadsheets/export?id=1rbQ0ktZ7FJmhuLyUaiiLCG7K4M4HZmiaW_353zPVxiQ&exportFormat=xlsx',
+        csv: 'https://docs.google.com/spreadsheets/export?id=1rbQ0ktZ7FJmhuLyUaiiLCG7K4M4HZmiaW_353zPVxiQ&exportFormat=csv',
+        zip: 'https://docs.google.com/spreadsheets/export?id=1rbQ0ktZ7FJmhuLyUaiiLCG7K4M4HZmiaW_353zPVxiQ&exportFormat=zip',
+        vnd.oasis.opendocument.spreadsheet: 'https://docs.google.com/spreadsheets/export?id=1rbQ0ktZ7FJmhuLyUaiiLCG7K4M4HZmiaW_353zPVxiQ&exportFormat=ods'}
+      thumbnailLink: https://docs.google.com/feeds/vt?gd=true&id=1rbQ0ktZ7FJmhuLyUaiiLCG7K4M4HZmiaW_353zPVxiQ&v=3&s=AMedNnoAAAAAXvLsszCcG3ZoA3w5T0Wk7u6CwU8RVeu5&sz=s220
+      ownerNames: [Ben Etherington]
+  server_config: {delegation_refresh_token: 1//03h1ay9GUDb8lCgYIARAAGAMSNwF-L9IrY3DyN7wkIRlNo25NIMoaRxu4Sock3t4mhp_RNb_yBz4lIhaLIdbU2v5XUF5puJuBIA4}
+startup: {type: form, module: GiftSelector}
+package_name: ACNH_Gift_Helper
+allow_embedding: false
+name: ACNH Gift Helper
+runtime_options: {version: 2, client_version: '3', server_version: python3-sandbox}
+metadata: {}
+db_schema:
+- name: gifts
+  id: 59984
+  python_name: gifts
+  columns:
+    +0Lmv+5P1KU=:
+      name: villager
+      type: liveObject
+      backend: anvil.tables.Row
+      admin_ui: {order: 2, width: 200}
+      table_id: 59982
+    LcCoJo5KhmM=:
+      name: purchased
+      type: bool
+      admin_ui: {order: 3, width: 200}
+    N2nLBvxN5W4=:
+      name: item
+      type: liveObject
+      backend: anvil.tables.Row
+      admin_ui: {order: 1, width: 200}
+      table_id: 59981
+    Q0_PEIJ2t4o=:
+      name: user
+      type: liveObject
+      backend: anvil.tables.Row
+      admin_ui: {order: 0, width: 200}
+      table_id: 59983
+    Vf7pgI66hTQ=:
+      name: delivered
+      type: bool
+      admin_ui: {order: 4, width: 200}
+    gmqEjuGdCL8=:
+      name: updated_on
+      type: datetime
+      admin_ui: {order: 6, width: 200}
+  access: {python_name: gifts, app_id: E32NS45G4KITFXGR, server: full, client: none,
+    table_id: 59984}
+- name: users
+  id: 59983
+  python_name: users
+  columns:
+    9nmRKyggV6A=:
+      name: warned
+      type: bool
+      admin_ui: {order: 8, width: 200}
+    Ja9ctZJyyTw=:
+      name: remembered_logins
+      type: simpleObject
+      admin_ui: {order: 6, width: 200}
+    RwvA9QpT7cc=:
+      name: villagers
+      type: liveObjectArray
+      backend: anvil.tables.Row
+      admin_ui: {order: 1, width: 200}
+      table_id: 59982
+    ZJaGLfdUmmQ=:
+      name: last_login
+      type: datetime
+      admin_ui: {order: 7, width: 200}
+    b3vlIj+20Zg=:
+      name: signed_up
+      type: datetime
+      admin_ui: {order: 3, width: 200}
+    rKrNvZu1aM8=:
+      name: enabled
+      type: bool
+      admin_ui: {order: 4, width: 200}
+    sBJD6JqnDe0=:
+      name: password_hash
+      type: string
+      admin_ui: {order: 5, width: 200}
+    z6BzFWJdYYY=:
+      name: email
+      type: string
+      admin_ui: {order: -1, width: 200}
+  access: {python_name: users, app_id: E32NS45G4KITFXGR, server: full, client: none,
+    table_id: 59983}
+- name: villagers
+  id: 59982
+  python_name: villagers
+  columns:
+    29nFDwl53zM=:
+      name: color1
+      type: string
+      admin_ui: {order: 6, width: 200}
+    ELGj+xwvu_E=:
+      name: style
+      type: string
+      admin_ui: {order: 7, width: 200}
+    EWk8_8w1xI8=:
+      name: style2
+      type: string
+      admin_ui: {order: 5, width: 200}
+    FiCWjFtwkC0=:
+      name: style1
+      type: string
+      admin_ui: {order: 4, width: 200}
+    UtNwXYI6SCI=:
+      name: closet_image
+      type: string
+      admin_ui: {order: 6, width: 200}
+    _ZWCfXSnEcc=:
+      name: icon_image
+      type: string
+      admin_ui: {order: 3, width: 200}
+    pia9RyfZFr0=:
+      name: name
+      type: string
+      admin_ui: {order: 2, width: 200}
+    qiedTILK+iM=:
+      name: color2
+      type: string
+      admin_ui: {order: 7, width: 200}
+  access: {python_name: villagers, app_id: E32NS45G4KITFXGR, server: full, client: search,
+    table_id: 59982}
+- name: items
+  id: 59981
+  python_name: items
+  columns:
+    1FqdkjKutn8=:
+      name: color2
+      type: string
+      admin_ui: {order: 3, width: 200}
+    U6vOp5qkH6w=:
+      name: closet_image
+      type: string
+      admin_ui: {order: 5, width: 200}
+    jIkvYs_n45c=:
+      name: color1
+      type: string
+      admin_ui: {order: 2, width: 200}
+    mh3caUXOH1E=:
+      name: name
+      type: string
+      admin_ui: {order: 1, width: 200}
+    wG46T2nwJrM=:
+      name: style
+      type: string
+      admin_ui: {order: 4, width: 200}
+  access: {python_name: items, app_id: E32NS45G4KITFXGR, server: full, client: search,
+    table_id: 59981}
+renamed: true

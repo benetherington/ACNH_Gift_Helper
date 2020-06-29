@@ -1,0 +1,33 @@
+container:
+  type: ColumnPanel
+  properties: {col_widths: '{}'}
+components:
+- type: DataGrid
+  properties:
+    role: null
+    columns:
+    - {title: Name, id: BHQKDB, data_key: name}
+    - {title: Closet Image, id: JXDUTE, data_key: closet_image}
+    - {title: Color1, id: KHZPPP, data_key: color1}
+    - {title: Color2, id: HUNVOY, data_key: color2}
+    - {title: Style, id: ZHXHXX, data_key: style}
+    auto_header: true
+    tooltip: ''
+    border: ''
+    foreground: ''
+    rows_per_page: 20
+    visible: true
+    show_page_controls: true
+    spacing_above: small
+    spacing_below: small
+    background: ''
+  name: data_grid_1
+  layout_properties: {grid_position: 'LDORCA,HGMXIL'}
+  components:
+  - type: RepeatingPanel
+    properties: {spacing_above: none, spacing_below: none, item_template: DatabaseViewer.ItemsDisplay.RowTemplate2}
+    name: repeating_panel_1
+    layout_properties: {}
+    data_bindings:
+    - {property: items, code: self.item}
+is_package: true

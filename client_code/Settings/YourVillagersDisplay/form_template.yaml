@@ -1,0 +1,47 @@
+container:
+  type: ColumnPanel
+  properties: {col_widths: '{}'}
+  event_bindings: {}
+components:
+- type: ColumnPanel
+  properties: {role: card, col_widths: '{}'}
+  name: no_villagers_card
+  layout_properties: {grid_position: 'WUMSYT,VLETTP'}
+  components:
+  - type: FlowPanel
+    properties: {}
+    name: flow_panel_1
+    layout_properties: {grid_position: 'CORXXB,BKZRST'}
+    components:
+    - type: Label
+      properties: {role: null, align: left, tooltip: '', border: '', foreground: '',
+        visible: true, text: 'You don''t have any villagers selected. Click the edit
+          button above, and select some of the villagers on the right.', font_size: null,
+        font: '', spacing_above: small, icon_align: left, spacing_below: small, italic: false,
+        background: '', bold: false, underline: false, icon: ''}
+      name: label_1
+      layout_properties: {grid_position: 'CORXXB,RDDAMZ'}
+      data_bindings:
+      - {property: visible, code: 'self.item == []'}
+    - type: Label
+      properties: {role: null, align: left, tooltip: '', border: '', foreground: '',
+        visible: true, text: You're currently in guest mode. Your changes here might be gone the next time you visit.,
+        font_size: null, font: '', spacing_above: small, icon_align: left, spacing_below: small,
+        italic: false, background: '', bold: true, underline: false, icon: ''}
+      name: label_2
+      layout_properties: {}
+      data_bindings:
+      - {property: visible, code: self.current_user_is_guest()}
+  data_bindings:
+  - {property: visible, code: 'self.current_user_is_guest() or self.item == []'}
+- type: RepeatingPanel
+  properties: {role: null, tooltip: '', border: '', foreground: '', items: null, visible: true,
+    spacing_above: small, spacing_below: small, item_template: Settings.YourVillagersDisplay.YourVillagersTemplate,
+    background: ''}
+  name: your_villagers_repeating_panel
+  layout_properties: {grid_position: 'IPKBAC,WKVXXW'}
+  data_bindings:
+  - {property: items, code: self.item}
+is_package: true
+custom_component: true
+properties: []

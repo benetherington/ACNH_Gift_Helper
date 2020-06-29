@@ -1,0 +1,15 @@
+container:
+  type: DataRowPanel
+  properties: {role: null, align: left, tooltip: '', border: '', foreground: '', auto_display_data: true,
+    visible: true, font_size: null, font: '', spacing_above: none, spacing_below: none,
+    italic: false, background: '', bold: false, underline: false}
+components:
+- type: Image
+  properties: {role: null, vertical_align: center, height: '60', tooltip: '', border: '',
+    foreground: '', visible: true, display_mode: shrink_to_fit, spacing_above: small,
+    source: '', spacing_below: small, background: '', horizontal_align: center}
+  name: image_1
+  layout_properties: {column: JXDUTE}
+  data_bindings:
+  - {property: source, code: 'self.item[''closet_image'']'}
+is_package: true

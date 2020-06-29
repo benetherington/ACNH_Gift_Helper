@@ -1,0 +1,35 @@
+container:
+  type: ColumnPanel
+  properties: {col_widths: '{}'}
+components:
+- type: ColumnPanel
+  properties: {role: card, col_widths: '{}'}
+  name: card
+  layout_properties: {grid_position: 'HCHGZS,TQLDTA'}
+  components:
+  - type: FlowPanel
+    properties: {}
+    name: flow_panel_1
+    layout_properties: {grid_position: 'HWVQSY,VHWUXX'}
+    components:
+    - type: Image
+      properties: {role: null, vertical_align: center, height: '100', tooltip: '',
+        border: '', foreground: '', visible: true, display_mode: shrink_to_fit, spacing_above: small,
+        source: '', spacing_below: small, background: '', horizontal_align: center}
+      name: image_1
+      layout_properties: {grid_position: 'HWVQSY,KEPKCD', width: 100}
+      data_bindings:
+      - {property: source, code: 'self.item[''closet_image'']'}
+  - type: Label
+    properties: {role: null, align: center, tooltip: '', border: '', foreground: '',
+      visible: true, text: 'Blue
+
+        Green', font_size: null, font: '', spacing_above: small, icon_align: left,
+      spacing_below: small, italic: false, background: '', bold: true, underline: false,
+      icon: ''}
+    name: label_1
+    layout_properties: {grid_position: 'UGSKUA,OPTBPU'}
+    data_bindings:
+    - {property: text, code: 'f"{self.item[''color1'']}\n{self.item[''color2'']}"'}
+is_package: true
+item_type: {table_id: null}

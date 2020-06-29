@@ -1,0 +1,23 @@
+container:
+  type: ColumnPanel
+  properties: {col_widths: '{"CIPGSS":15,"UETRQY":45}'}
+components:
+- type: Button
+  properties: {role: primary-color, align: center, tooltip: '', border: '', enabled: true,
+    foreground: '', visible: true, text: Select, font_size: null, font: '', spacing_above: small,
+    icon_align: left, spacing_below: small, italic: false, background: '', bold: false,
+    underline: false, icon: ''}
+  name: select_button
+  layout_properties: {grid_position: 'DARNXD,CIPGSS'}
+  event_bindings: {click: select_button_click}
+- type: Label
+  properties: {role: null, align: left, tooltip: '', border: '', foreground: '', visible: true,
+    text: Heart Shades, font_size: null, font: '', spacing_above: small, icon_align: left,
+    spacing_below: small, italic: false, background: '', bold: false, underline: false,
+    icon: ''}
+  name: label_1
+  layout_properties: {grid_position: 'DARNXD,UETRQY'}
+  data_bindings:
+  - {property: text, code: self.item}
+is_package: true
+item_type: {table_id: null}

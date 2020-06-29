@@ -1,0 +1,149 @@
+is_package: true
+container:
+  type: HtmlTemplate
+  properties: {html: '@theme:standard-page.html'}
+components:
+- type: ColumnPanel
+  properties: {col_widths: '{}'}
+  name: content_panel
+  layout_properties: {slot: default}
+  components:
+  - type: Label
+    properties: {role: null, align: center, tooltip: '', border: '', foreground: '',
+      visible: true, text: ABOUT, font_size: 30, font: '', spacing_above: small, icon_align: left,
+      spacing_below: small, italic: false, background: '', bold: true, underline: false,
+      icon: ''}
+    name: label_1
+    layout_properties: {grid_position: 'XPKIRH,DTRKBI'}
+  - type: Label
+    properties: {role: null, align: center, tooltip: '', border: '', foreground: '',
+      visible: true, text: 'Version #.#', font_size: null, font: '', spacing_above: small,
+      icon_align: left, spacing_below: small, italic: false, background: '', bold: false,
+      underline: false, icon: ''}
+    name: label_5
+    layout_properties: {grid_position: 'DQORNQ,KFIAMO'}
+    data_bindings:
+    - {property: text, code: 'f"Version {self.version()}"'}
+  - type: Label
+    properties: {role: null, align: left, tooltip: '', border: '', foreground: '',
+      visible: true, text: 'This app was written by Ben Etherington in 2020. It is
+        partially an exercise in UI design, exploring the Anvil framework, and a solution
+        to a problem. I am always looking for clients! If you want to hire a software
+        dev with an unusual resume, get in touch!', font_size: null, font: '', spacing_above: small,
+      icon_align: left, spacing_below: small, italic: false, background: '', bold: false,
+      underline: false, icon: ''}
+    name: label_2
+    layout_properties: {grid_position: 'LDZKIB,ZUFFIH'}
+  - type: Link
+    properties: {role: null, url: 'https://github.com/benetherington/', align: center,
+      tooltip: '', border: '', foreground: '', visible: true, text: github.com/benetherington/,
+      font_size: null, wrap_on: mobile, font: '', col_spacing: medium, spacing_above: small,
+      icon_align: left, col_widths: '{}', spacing_below: small, italic: false, background: '',
+      bold: false, underline: false, icon: ''}
+    name: link_2
+    layout_properties: {grid_position: 'SGDVUR,SCLSLW'}
+    components: []
+  - type: Link
+    properties: {role: null, url: 'http://twitter.com/benetherington', align: center,
+      tooltip: '', border: '', foreground: '', visible: true, text: twitter.com/benetherington,
+      font_size: null, wrap_on: mobile, font: '', col_spacing: medium, spacing_above: small,
+      icon_align: left, col_widths: '', spacing_below: small, italic: false, background: '',
+      bold: false, underline: false, icon: ''}
+    name: link_3
+    layout_properties: {grid_position: 'BFHAWS,NARTHI'}
+  - type: form:HorizontalRule
+    properties: {}
+    name: custom_1
+    layout_properties: {grid_position: 'GOMEMS,PDWUSB'}
+  - type: Label
+    properties: {role: null, align: left, tooltip: '', border: '', foreground: '',
+      visible: true, text: 'Thanks so much to the entire Animal Crossing community,
+        which is welcoming and joyful, with very rare exceptions. A major part of
+        that community is all of the players who dedicate large amounts of time to
+        data mining, experimentation, content creation, and educating others.
+
+
+        In particular, thank you to the long list of people who contributed to the
+        public data spreadsheet that I imported this data from.', font_size: null,
+      font: '', spacing_above: small, icon_align: left, spacing_below: small, italic: false,
+      background: '', bold: false, underline: false, icon: ''}
+    name: label_3
+    layout_properties: {grid_position: 'GPZXMH,OMZYCS'}
+  - type: Link
+    properties: {role: null, url: 'http://tinyurl.com/acnh-sheet', align: center,
+      tooltip: '', border: '', foreground: '', visible: true, text: tinyurl.com/acnh-sheet,
+      font_size: null, wrap_on: mobile, font: '', col_spacing: medium, spacing_above: small,
+      icon_align: left, col_widths: '{}', spacing_below: small, italic: false, background: '',
+      bold: false, underline: false, icon: ''}
+    name: link_1
+    layout_properties: {grid_position: 'JPLIET,SHYZBU'}
+    components:
+    - type: form:HorizontalRule
+      properties: {}
+      name: custom_2
+      layout_properties: {grid_position: 'NGDSQO,UHSJQX'}
+  - type: Link
+    properties: {role: null, url: 'http://creativecommons.org/licenses/by-sa/4.0/',
+      align: left, tooltip: '', border: '', foreground: '', visible: true, text: This work is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License.,
+      font_size: null, wrap_on: mobile, font: '', col_spacing: medium, spacing_above: small,
+      icon_align: left, col_widths: '', spacing_below: small, italic: false, background: '',
+      bold: false, underline: false, icon: ''}
+    name: link_4
+    layout_properties: {grid_position: 'UMDJAL,NCONZW'}
+- type: FlowPanel
+  properties: {}
+  name: navbar_links
+  layout_properties: {slot: nav-right}
+- type: Label
+  properties: {role: null, align: left, tooltip: '', border: '', foreground: '', visible: true,
+    text: ACNH Villager Gift Helper, font_size: null, font: '', spacing_above: small,
+    icon_align: left, spacing_below: small, italic: false, background: '', bold: false,
+    underline: false, icon: ''}
+  name: label_4
+  layout_properties: {slot: title}
+- type: ColumnPanel
+  properties: {col_widths: '{}'}
+  name: column_panel_2
+  layout_properties: {slot: left-nav}
+  components:
+  - type: Button
+    properties: {role: raised, align: center, tooltip: '', border: '', enabled: true,
+      foreground: '', visible: true, text: Gift Selection, font_size: null, font: '',
+      spacing_above: small, icon_align: left, spacing_below: small, italic: false,
+      background: '', bold: false, underline: false, icon: ''}
+    name: selector_button
+    layout_properties: {grid_position: 'ISBQLV,ATEDDV'}
+    data_bindings: []
+    event_bindings: {click: selector_button_click}
+  - type: Button
+    properties: {role: raised, align: center, tooltip: '', border: '', enabled: true,
+      foreground: '', visible: true, text: Shopping cart (  ), font_size: null, font: '',
+      spacing_above: small, icon_align: left, spacing_below: small, italic: false,
+      background: '', bold: false, underline: false, icon: ''}
+    name: cart_button
+    layout_properties: {grid_position: 'FSFDOH,DQAJYT'}
+    data_bindings:
+    - {property: text, code: 'f"Shopping cart ({self.cart_item_count()})" if self.current_user_is_not_guest()
+        else "Shopping cart\n(disabled in guest mode)"'}
+    - {property: enabled, code: self.current_user_is_not_guest()}
+    event_bindings: {click: cart_button_click}
+  - type: Spacer
+    properties: {height: 162}
+    name: spacer_1
+    layout_properties: {grid_position: 'UDQHZR,RPQMYV'}
+  - type: Button
+    properties: {role: null, align: center, tooltip: '', border: '', enabled: true,
+      foreground: '', visible: true, text: Settings, font_size: null, font: '', spacing_above: small,
+      icon_align: left, spacing_below: small, italic: false, background: '', bold: false,
+      underline: false, icon: ''}
+    name: settings_button
+    layout_properties: {grid_position: 'PXWFWX,KLCOED'}
+    event_bindings: {click: settings_button_click}
+  - type: Button
+    properties: {role: primary-color, align: center, tooltip: '', border: '', enabled: true,
+      foreground: '', visible: true, text: About, font_size: null, font: '', spacing_above: small,
+      icon_align: left, spacing_below: small, italic: false, background: '', bold: false,
+      underline: false, icon: ''}
+    name: about_button
+    layout_properties: {grid_position: 'QTQEPP,KKRBKT'}
+  data_bindings: []

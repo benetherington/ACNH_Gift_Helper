@@ -1,0 +1,151 @@
+is_package: true
+container:
+  type: HtmlTemplate
+  properties: {html: '@theme:standard-page.html'}
+  event_bindings: {refreshing_data_bindings: form_refreshing_data_bindings}
+components:
+- type: ColumnPanel
+  properties: {role: null, tooltip: '', border: '', foreground: '', visible: true,
+    wrap_on: mobile, col_spacing: medium, spacing_above: small, col_widths: '{}',
+    spacing_below: small, background: ''}
+  name: content_panel
+  layout_properties: {slot: default}
+  components:
+  - type: Label
+    properties: {role: headline, align: left, tooltip: '', border: '', foreground: '',
+      visible: true, text: Your Villagers, font_size: null, font: '', spacing_above: small,
+      icon_align: left, spacing_below: small, italic: false, background: '', bold: false,
+      underline: false, icon: ''}
+    name: label_1
+    layout_properties: {grid_position: 'KQYXXG,LEKPVK MRCWNN,EDXAPC', full_width_row: false}
+  - type: Button
+    properties: {role: raised, align: center, tooltip: '', border: '', enabled: true,
+      foreground: '', visible: true, text: Edit, font_size: null, font: '', spacing_above: small,
+      icon_align: left, spacing_below: small, italic: false, background: '', bold: false,
+      underline: false, icon: ''}
+    name: edit_button
+    layout_properties: {grid_position: 'KQYXXG,LEKPVK MRCWNN,JSJNJH', full_width_row: false}
+    event_bindings: {click: edit_button_click}
+  - type: form:Settings.YourVillagersDisplay
+    properties: {}
+    name: your_villagers_display
+    layout_properties: {grid_position: 'KQYXXG,LEKPVK OCTVWR,XLUENL'}
+  - type: Label
+    properties: {role: headline, align: left, tooltip: '', border: '', foreground: '',
+      visible: true, text: All Villagers, font_size: null, font: '', spacing_above: small,
+      icon_align: left, spacing_below: small, italic: false, background: '', bold: false,
+      underline: false, icon: ''}
+    name: label_2
+    layout_properties: {grid_position: 'KQYXXG,FKYGLP VBPSJY,EMADRW', full_width_row: false}
+  - type: Button
+    properties: {role: raised, align: center, tooltip: '', border: '', enabled: true,
+      foreground: '', visible: true, text: Expand All, font_size: null, font: '',
+      spacing_above: medium, icon_align: left, spacing_below: small, italic: false,
+      background: '', bold: false, underline: false, icon: ''}
+    name: expand_button
+    layout_properties: {grid_position: 'KQYXXG,FKYGLP VBPSJY,FZIHFP', full_width_row: false}
+    event_bindings: {click: expand_button_click}
+  - type: Button
+    properties: {role: raised, align: center, tooltip: '', border: '', enabled: true,
+      foreground: '', visible: true, text: Collapse All, font_size: null, font: '',
+      spacing_above: small, icon_align: left, spacing_below: small, italic: false,
+      background: '', bold: false, underline: false, icon: ''}
+    name: collapse_button
+    layout_properties: {grid_position: 'KQYXXG,FKYGLP VBPSJY,IXDNUM', full_width_row: false}
+    event_bindings: {click: collapse_button_click}
+  - type: ColumnPanel
+    properties: {role: card, col_widths: '{}'}
+    name: card_1
+    layout_properties: {grid_position: 'KQYXXG,FKYGLP VONCYZ,MZAURO'}
+    components:
+    - type: TextBox
+      properties: {role: null, align: left, hide_text: false, tooltip: '', placeholder: Filter Villagers,
+        border: '', enabled: true, foreground: '', visible: true, text: '', font_size: null,
+        font: '', spacing_above: small, type: text, spacing_below: small, italic: false,
+        background: '', bold: false, underline: false}
+      name: search_text_box
+      layout_properties: {grid_position: 'UDMYAV,LLXNGK', full_width_row: false, width: 358}
+      event_bindings: {change: search_text_box_change, pressed_enter: search_text_box_pressed_enter}
+    - type: ColumnPanel
+      properties: {role: fixed-height-w-scroll, tooltip: '', border: '', foreground: '',
+        visible: true, wrap_on: mobile, col_spacing: medium, spacing_above: small,
+        col_widths: '{}', spacing_below: small, background: ''}
+      name: column_panel_1
+      layout_properties: {grid_position: 'RYKDSQ,EUNNDT'}
+      components:
+      - type: RepeatingPanel
+        properties: {role: null, tooltip: '', border: '', foreground: '', items: null,
+          visible: true, spacing_above: small, spacing_below: small, item_template: Settings.AllVillagagersDisplay,
+          background: ''}
+        name: all_villagers_repeating_panel
+        layout_properties: {grid_position: 'JCEJRH,SZITYB'}
+- type: FlowPanel
+  properties: {}
+  name: navbar_links
+  layout_properties: {slot: nav-right}
+  components:
+  - type: form:TitlebarUserDisplay
+    properties: {}
+    name: titlebar_user_display
+    layout_properties: {}
+  - type: Link
+    properties: {role: null, url: '', align: left, tooltip: '', border: '', foreground: '',
+      visible: true, text: Home, font_size: null, wrap_on: mobile, font: '', col_spacing: medium,
+      spacing_above: small, icon_align: left, col_widths: '', spacing_below: small,
+      italic: false, background: '', bold: false, underline: false, icon: ''}
+    name: home_link
+    layout_properties: {}
+    event_bindings: {click: home_link_click}
+- type: Label
+  properties: {role: null, align: left, tooltip: '', border: '', foreground: '', visible: true,
+    text: User Settings, font_size: null, font: '', spacing_above: small, icon_align: left,
+    spacing_below: small, italic: false, background: '', bold: false, underline: false,
+    icon: ''}
+  name: label_3
+  layout_properties: {slot: title}
+- type: ColumnPanel
+  properties: {col_widths: '{}'}
+  name: column_panel_2
+  layout_properties: {slot: left-nav}
+  components:
+  - type: Button
+    properties: {role: raised, align: center, tooltip: '', border: '', enabled: true,
+      foreground: '', visible: true, text: Gift Selection, font_size: null, font: '',
+      spacing_above: small, icon_align: left, spacing_below: small, italic: false,
+      background: '', bold: false, underline: false, icon: ''}
+    name: selector_button
+    layout_properties: {grid_position: 'NPBRWA,TLYJKM'}
+    event_bindings: {click: selector_button_click}
+  - type: Button
+    properties: {role: raised, align: center, tooltip: '', border: '', enabled: true,
+      foreground: '', visible: true, text: Shopping cart (  ), font_size: null, font: '',
+      spacing_above: small, icon_align: left, spacing_below: small, italic: false,
+      background: '', bold: false, underline: false, icon: ''}
+    name: cart_button
+    layout_properties: {grid_position: 'RXPMJF,OXEUPH'}
+    data_bindings:
+    - {property: text, code: 'f"Shopping cart ({self.cart_item_count()})" if self.current_user_is_not_guest()
+        else "Shopping cart\n(disabled in guest mode)"'}
+    - {property: enabled, code: self.current_user_is_not_guest()}
+    event_bindings: {click: cart_button_click}
+  - type: Spacer
+    properties: {visible: true, spacing_above: small, spacing_below: small, height: '162',
+      tooltip: ''}
+    name: spacer_1
+    layout_properties: {grid_position: 'SOZDMU,FHYULL'}
+  - type: Button
+    properties: {role: primary-color, align: center, tooltip: '', border: '', enabled: true,
+      foreground: '', visible: true, text: Settings, font_size: null, font: '', spacing_above: small,
+      icon_align: left, spacing_below: small, italic: false, background: '', bold: false,
+      underline: false, icon: ''}
+    name: button_1
+    layout_properties: {grid_position: 'PVCOMB,BTIQBP'}
+  - type: Button
+    properties: {role: null, align: center, tooltip: '', border: '', enabled: true,
+      foreground: '', visible: true, text: About, font_size: null, font: '', spacing_above: small,
+      icon_align: left, spacing_below: small, italic: false, background: '', bold: false,
+      underline: false, icon: ''}
+    name: about_button
+    layout_properties: {grid_position: 'DYNPOA,AAOYPW'}
+    event_bindings: {click: about_button_click}
+  data_bindings: []

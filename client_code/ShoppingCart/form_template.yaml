@@ -1,0 +1,163 @@
+is_package: true
+container:
+  type: HtmlTemplate
+  properties: {html: '@theme:standard-page.html'}
+  event_bindings: {refreshing_data_bindings: form_refreshing_data_bindings}
+components:
+- type: ColumnPanel
+  properties: {col_widths: '{"DXKTSQ":25,"NQGZNE":10,"IZIJKX":25}'}
+  name: content_panel
+  layout_properties: {slot: default}
+  components:
+  - type: DropDown
+    properties:
+      role: null
+      align: full
+      tooltip: ''
+      placeholder: ''
+      border: ''
+      enabled: true
+      foreground: ''
+      items: [Shopping list, Delivery list, History]
+      visible: true
+      font_size: null
+      font: ''
+      spacing_above: small
+      spacing_below: small
+      italic: false
+      background: ''
+      bold: false
+      underline: false
+      include_placeholder: false
+    name: status_filter_drop_down
+    layout_properties: {grid_position: 'BKMLGO,DXKTSQ'}
+    event_bindings: {change: filters_drop_down_change}
+  - type: Label
+    properties: {role: null, align: left, tooltip: 'Filter the displayed gifts. "Shopping
+        list" shows you the gifts you''ve picked out, but haven''t yet delivered.
+        "Delivery list" shows you the gifts you''ve purchased, but still need to deliver.
+        "History" shows you all of your gifts.', border: '', foreground: 'theme:Primary
+        500', visible: true, text: '', font_size: 25, font: '', spacing_above: small,
+      icon_align: left, spacing_below: small, italic: false, background: '', bold: false,
+      underline: false, icon: 'fa:question-circle'}
+    name: label_4
+    layout_properties: {grid_position: 'BKMLGO,NQGZNE'}
+  - type: Spacer
+    properties: {height: 32}
+    name: spacer_4
+    layout_properties: {grid_position: 'BKMLGO,IZIJKX'}
+  - type: ColumnPanel
+    properties: {role: card, col_widths: '{"KJCYDE":57}'}
+    name: card_1
+    layout_properties: {grid_position: 'GJVNLP,YBITKQ'}
+    components:
+    - type: FlowPanel
+      properties: {role: null, spacing: none, align: right, tooltip: '', border: '',
+        foreground: '', visible: true, spacing_above: none, spacing_below: none, background: ''}
+      name: flow_panel_1
+      layout_properties: {grid_position: 'CWFPYK,KJCYDE'}
+      components:
+      - type: Label
+        properties: {role: rotated, align: center, tooltip: '', border: '', foreground: '',
+          visible: true, text: Purchased, font_size: null, font: '', spacing_above: none,
+          icon_align: left, spacing_below: none, italic: false, background: '', bold: false,
+          underline: false, icon: ''}
+        name: label_1
+        layout_properties: {grid_position: 'ETCNRZ,SJXQYM', full_width_row: false}
+      - type: Spacer
+        properties: {height: 32}
+        name: spacer_2
+        layout_properties: {width: 10}
+      - type: Label
+        properties: {role: rotated, align: center, tooltip: '', border: '', foreground: '',
+          visible: true, text: Delivered, font_size: null, font: '', spacing_above: none,
+          icon_align: left, spacing_below: none, italic: false, background: '', bold: false,
+          underline: false, icon: ''}
+        name: label_2
+        layout_properties: {grid_position: 'CWFPYK,YOODNC', full_width_row: false}
+        data_bindings: []
+      - type: Spacer
+        properties: {height: 32}
+        name: spacer_1
+        layout_properties: {width: 11}
+      - type: Link
+        properties: {role: rotated, url: '', align: left, tooltip: '', border: outset,
+          foreground: 'theme:Secondary 700', visible: true, text: Delete, font_size: null,
+          wrap_on: mobile, font: '', col_spacing: medium, spacing_above: small, icon_align: left,
+          col_widths: '', spacing_below: small, italic: false, background: '', bold: false,
+          underline: false, icon: ''}
+        name: delete_toggle_link
+        layout_properties: {}
+        event_bindings: {click: delete_toggle_link_click}
+    - type: RepeatingPanel
+      properties: {item_template: ShoppingCart.VillagerGiftTemplate}
+      name: villager_gift_repeating_panel
+      layout_properties: {grid_position: 'FJUKPG,DTBPGF'}
+- type: FlowPanel
+  properties: {}
+  name: navbar_links
+  layout_properties: {slot: nav-right}
+  components:
+  - type: form:TitlebarUserDisplay
+    properties: {}
+    name: titlebar_user_display
+    layout_properties: {}
+  - type: Link
+    properties: {role: null, url: '', align: left, tooltip: '', border: '', foreground: '',
+      visible: true, text: Settings, font_size: null, wrap_on: mobile, font: '', col_spacing: medium,
+      spacing_above: small, icon_align: left, col_widths: '', spacing_below: small,
+      italic: false, background: '', bold: false, underline: false, icon: ''}
+    name: settings_link
+    layout_properties: {}
+    event_bindings: {click: settings_link_click}
+- type: Label
+  properties: {role: null, align: left, tooltip: '', border: '', foreground: '', visible: true,
+    text: ACNH Villager Gift Helper, font_size: null, font: '', spacing_above: small,
+    icon_align: left, spacing_below: small, italic: false, background: '', bold: false,
+    underline: false, icon: ''}
+  name: label_3
+  layout_properties: {slot: title}
+- type: ColumnPanel
+  properties: {col_widths: '{}'}
+  name: column_panel_2
+  layout_properties: {slot: left-nav}
+  components:
+  - type: Button
+    properties: {role: raised, align: center, tooltip: '', border: '', enabled: true,
+      foreground: '', visible: true, text: Gift selection, font_size: null, font: '',
+      spacing_above: small, icon_align: left, spacing_below: small, italic: false,
+      background: '', bold: false, underline: false, icon: ''}
+    name: selector_button
+    layout_properties: {grid_position: 'SQKLBM,HUSTQJ'}
+    event_bindings: {click: selector_button_click}
+  - type: Button
+    properties: {role: primary-color, align: center, tooltip: '', border: '', enabled: true,
+      foreground: '', visible: true, text: Shopping cart (  ), font_size: null, font: '',
+      spacing_above: small, icon_align: left, spacing_below: small, italic: false,
+      background: '', bold: false, underline: false, icon: ''}
+    name: button_1
+    layout_properties: {grid_position: 'MLQSQM,IUMVBP'}
+    data_bindings:
+    - {property: text, code: 'f"Shopping cart ({self.cart_item_count()})"'}
+  - type: Spacer
+    properties: {visible: true, spacing_above: small, spacing_below: small, height: '162',
+      tooltip: ''}
+    name: spacer_3
+    layout_properties: {grid_position: 'XKLSHO,KJLFYC'}
+  - type: Button
+    properties: {role: null, align: center, tooltip: '', border: '', enabled: true,
+      foreground: '', visible: true, text: Settings, font_size: null, font: '', spacing_above: small,
+      icon_align: left, spacing_below: small, italic: false, background: '', bold: false,
+      underline: false, icon: ''}
+    name: settings_button
+    layout_properties: {grid_position: 'DYWWUF,OFNPTN'}
+    event_bindings: {click: settings_button_click}
+  - type: Button
+    properties: {role: null, align: center, tooltip: '', border: '', enabled: true,
+      foreground: '', visible: true, text: About, font_size: null, font: '', spacing_above: small,
+      icon_align: left, spacing_below: small, italic: false, background: '', bold: false,
+      underline: false, icon: ''}
+    name: about_button
+    layout_properties: {grid_position: 'LFXETZ,KRCBMJ'}
+    event_bindings: {show: about_button_show}
+  data_bindings: []

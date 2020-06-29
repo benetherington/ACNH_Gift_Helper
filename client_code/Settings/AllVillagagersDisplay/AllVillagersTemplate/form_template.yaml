@@ -1,0 +1,60 @@
+container:
+  type: ColumnPanel
+  properties: {col_widths: '{"PUOAFU":8,"PARFYG":34}'}
+components:
+- type: Image
+  properties: {role: null, vertical_align: center, height: '55', tooltip: '', border: '',
+    foreground: '', visible: true, display_mode: shrink_to_fit, spacing_above: small,
+    source: '', spacing_below: small, background: '', horizontal_align: center}
+  name: image_1
+  layout_properties: {grid_position: 'CEOJYK,PUOAFU', full_width_row: false}
+  data_bindings:
+  - {property: source, code: 'self.item[''villager''][''icon_image'']'}
+- type: ColumnPanel
+  properties: {col_widths: '{"MHKUIH":26,"UFNYRQ":15}'}
+  name: column_panel_1
+  layout_properties: {grid_position: 'CEOJYK,PARFYG', full_width_row: false}
+  components:
+  - type: FlowPanel
+    properties: {}
+    name: flow_panel_2
+    layout_properties: {grid_position: 'SIOCET,UFNYRQ', full_width_row: false}
+    components:
+    - type: Label
+      properties: {role: null, align: left, tooltip: '', border: '', foreground: '',
+        visible: true, text: Margie, font_size: null, font: '', spacing_above: small,
+        icon_align: left, spacing_below: small, italic: false, background: '', bold: true,
+        underline: false, icon: ''}
+      name: name_label
+      layout_properties: {grid_position: 'SIOCET,DZMUBA', full_width_row: false}
+      data_bindings:
+      - {property: text, code: 'self.item[''villager''][''name'']'}
+    - type: Label
+      properties: {role: null, align: left, tooltip: '', border: '', foreground: '#00cc52',
+        visible: true, text: '', font_size: 26, font: '', spacing_above: small, icon_align: left,
+        spacing_below: small, italic: false, background: '', bold: false, underline: false,
+        icon: 'fa:check-circle'}
+      name: label_1
+      layout_properties: {grid_position: 'SIOCET,JRUMNJ', full_width_row: false}
+      data_bindings:
+      - {property: visible, code: 'self.item[''selected'']'}
+  - type: FlowPanel
+    properties: {role: null, spacing: medium, align: left, tooltip: '', border: '',
+      foreground: '', visible: true, spacing_above: small, spacing_below: small, background: ''}
+    name: flow_panel_1
+    layout_properties: {grid_position: 'SIOCET,MHKUIH', full_width_row: false}
+    components:
+    - type: Button
+      properties: {role: primary-color, align: center, tooltip: '', border: '', enabled: true,
+        foreground: '', visible: true, text: Select, font_size: null, font: '', spacing_above: small,
+        icon_align: left, spacing_below: small, italic: false, background: '', bold: false,
+        underline: false, icon: ''}
+      name: select_remove_button
+      layout_properties: {grid_position: 'SIOCET,FXWPYD', full_width_row: false}
+      event_bindings: {click: select_remove_button_click}
+      data_bindings:
+      - {property: text, code: '"Remove" if self.item[''selected''] else " Select"'}
+      - {property: role, code: '"secondary-color" if self.item[''selected''] else
+          "primary-color"'}
+is_package: true
+item_type: {table_id: null}
